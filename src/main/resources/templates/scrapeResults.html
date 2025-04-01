@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-Java - PARSE</title>
+    <link rel="stylesheet" href="/scrapeResults.css">
+</head>
+<body>
+
+<header>
+    <h1>Lab-Java - PARSE</h1>
+</header>
+
+<div class="container">
+    <div class="nav-links">
+        <a href="/">Головна</a>
+        <a href="/export">Експортувати в Excel</a>
+        <a href="/currencyRates">Отримати курс валют</a>
+    </div>
+
+    <h2>Повідомлення:</h2>
+    <div th:text="${message}"></div>
+
+    <h2>Товари:</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Наявність</th>
+            <th>Посилання</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.availability ? 'В наявності' : 'Немає'}"></td>
+            <td><a th:href="${product.link}">Посилання</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

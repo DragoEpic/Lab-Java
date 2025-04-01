@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курси Валют - Приватбанк</title>
+  <link rel="stylesheet" href="/currencyRates.css">
+</head>
+<body>
+
+<header>
+  <span>Курси Валют - Приватбанк</span>
+</header>
+
+<a href="/" class="back-btn">⬅ Повернутися на головну</a>
+
+<div class="exchange-container">
+  <h2>Останні курси валют</h2>
+  <div class="exchange-rates">
+    <pre th:text="${exchangeRates}"></pre>
+  </div>
+</div>
+
+</body>
+</html>

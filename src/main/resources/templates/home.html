@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-Java</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+<header>
+    <h1>Lab-Java</h1>
+</header>
+
+<div class="container">
+    <div class="nav-links">
+        <a href="/scrapeResults">Парсити товари з Rozetka</a>
+        <a href="/export">Експортувати в Excel</a>
+        <a href="/currencyRates">Отримати курс валют</a>
+    </div>
+
+    <h2>Товари в Базі Даних:</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Наявність</th>
+            <th>Посилання</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.availability ? 'В наявності' : 'Немає'}"></td>
+            <td><a th:href="${product.link}" target="_blank">Перейти</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Курс валют (Приватбанк):</h2>
+    <div class="exchange-rates">
+        <pre th:text="${exchangeRates}"></pre>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Lab-Java | <a href="https://www.rozetka.com.ua" target="_blank">Перейти на Rozetka</a></p>
+</footer>
+
+</body>
+</html>

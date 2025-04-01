@@ -1,0 +1,63 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.back-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+.exchange-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-rates {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .exchange-container {
+        padding: 20px;
+    }
+    header {
+        font-size: 20px;
+    }
+    .back-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
